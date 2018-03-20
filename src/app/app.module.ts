@@ -10,13 +10,15 @@ import { ContatosPage } from '../pages/contatos/contatos';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ContatosProvider } from '../providers/contatos/contatos';
+import { ContatoDetalhePage } from './../pages/contato-detalhe/contato-detalhe';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    ContatosPage
+    ContatosPage,
+    ContatoDetalhePage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { ContatosProvider } from '../providers/contatos/contatos';
     MyApp,
     HomePage,
     ListPage,
-    ContatosPage
+    ContatosPage,
+    ContatoDetalhePage
   ],
   providers: [
     StatusBar,

@@ -1,3 +1,4 @@
+import { ContatoDetalhePage } from './../contato-detalhe/contato-detalhe';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ContatosProvider } from '../../providers/contatos/contatos';
@@ -15,7 +16,7 @@ import { ContatosProvider } from '../../providers/contatos/contatos';
   templateUrl: 'contatos.html',
 })
 export class ContatosPage {
-  contatos: Array<{nome: string, endereco: string, cep: string, lat: number, log: number, email: string}> = [];
+  contatos: Array<{nome: string, endereco: string, cep: string, lat: number, long: number, email: string}> = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public contatosProvider: ContatosProvider) {
     this.contatos = contatosProvider.getContatos();
@@ -23,6 +24,14 @@ export class ContatosPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContatosPage');
+  }
+
+  addContato(){
+    this.navCtrl.push(ContatoDetalhePage);
+  }
+
+  editContato(){
+    this.navCtrl.push(ContatoDetalhePage, {cttParam: contato});
   }
 
 }
